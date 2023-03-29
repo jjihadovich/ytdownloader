@@ -2,6 +2,9 @@ from flask import Flask, render_template
 from forms import YtSearch
 from pytube import YouTube
 
+
+
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'nigga'
 
@@ -15,6 +18,7 @@ def index():
     audio = ""
     video = ""
     author = ""
+    imagecss = ""
     wait = "Вставьте Ссылку!"
     form = YtSearch()
     link = form.link
@@ -25,6 +29,7 @@ def index():
             yt = YouTube(form.link.data)
             vidtitle = yt.title
             vidimg = yt.thumbnail_url
+            imagecss = "border: 4px solid white;"
             load = "Скачать"
             audio = "Аудио"
             video = "Видео"
@@ -38,7 +43,7 @@ def index():
 
 
 
-    return render_template("index.html", form=form, vidtitle=vidtitle, vidimg=vidimg, load=load, loadaudio=loadaudio, loadvideo=loadvideo, audio=audio, video=video, wait=wait)
+    return render_template("index.html", form=form, vidtitle=vidtitle, vidimg=vidimg, load=load, loadaudio=loadaudio, loadvideo=loadvideo, audio=audio, video=video, wait=wait, imagecss=imagecss)
 
 if __name__ == "__main__":
     app.run(debug=True)

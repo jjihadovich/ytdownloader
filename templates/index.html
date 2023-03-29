@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1">
     <title>YT Downloader</title>
     <link rel="icon" href="static/favicon.ico">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
         h1 {
             margin: 10px;
             font-family: 'Bungee Shade', cursive;
@@ -62,6 +63,7 @@
             }
         }
         .title {
+            text-decoration: underline;
             font-family: 'Comfortaa', cursive;
             margin-top: -190px
         }
@@ -93,6 +95,13 @@
             cursor: pointer;
         }
 
+        load {
+            text-decoration: underline;
+        }
+        img {
+             border-radius: 15px;
+             {{ imagecss }}
+        }
     </style>
 </head>
 <h1>Youtube Downloader</h1>
